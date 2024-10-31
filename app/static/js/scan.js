@@ -1,4 +1,6 @@
 //import YooKassa from 'yookassa';
+// const buttons = document.querySelectorAll('.shop .shop__list button') 
+// console.log(buttons);
 
 let scanning = false;
 let videoStream;
@@ -6,22 +8,12 @@ let scanResult = '';
 
 const paymentButton = document.getElementById('paymentButton');
 const paymentIframe = document.querySelector('.payment iframe')
-// let url = 'https://rickandmortyapi.com/api/character/2';
-        // let response = await fetch(url,{
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     }
-        // });
-        // // alert('f')
-        // let commits = await response.json(); // читаем ответ в формате JSON
-        // alert(JSON.stringify(commits));
     paymentButton.addEventListener('click', async () =>{
     try{
         const response = await axios.post('http://localhost:4200/api/payment',{
             amount:200,
             
-        })
+    })
        // console.log(response);
         //console.log(paymentIframe);
         window.location.href = response.data.confirmation.confirmation_url 
@@ -165,6 +157,6 @@ function showPopup(message) {
 }
 
 // Инициализация: скрываем область результатов при загрузке страницы
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('resultArea').style.display = 'none';
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     document.getElementById('resultArea').style.display = 'none';
+// });

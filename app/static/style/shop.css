@@ -1,0 +1,68 @@
+h2{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.shop{
+    font-family: "Gill Sans", sans-serif;
+}
+.shop .shop__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px;
+}
+.shop .shop__list li{
+   background-color: white;
+   border-radius: 10px;
+   padding: 10px;
+}
+.shop .shop__list li h3{
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+.shop .shop__list li img{
+    margin: auto;
+    display: block;
+    width: 100%;
+    aspect-ratio: 2;
+    object-fit: cover;
+}
+
+.shop .shop__list .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.shop .shop__list .footer button{
+    border: none;
+    background-color: #EFEFEF;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.shop .shop__list .footer span{
+    color: #FF9401;
+    font-weight: 600;
+}
+.payment{
+
+}
+
+@media (max-width: 550px) {
+    .shop .shop__list{
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px;
+    }
+}
+@media (max-width: 370px) {
+    .shop .shop__list{
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+}

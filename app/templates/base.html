@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Приложение QR-кодов{% endblock %}</title>
     <link rel="stylesheet" href="/static/style/style.css">
+    <link rel="stylesheet" href="/static/style/reset.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/easyqrcodejs@4.4.13/dist/easy.qrcode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://static.yoomoney.ru/checkout-js/v1/checkout.js"></script>
+    <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
     <script>
         const tg = window.Telegram.WebApp;
         tg.ready()
@@ -19,10 +21,11 @@
 <body>
 <div class="container">
     {% block content %}{% endblock %}
+    <div id="payment-form"></div>
 </div>
 
-<nav class="nav-bar">
-    <a href="/" class="nav-item {% if active_tab == 'generate' %}active{% endif %}">
+<!-- <nav class="nav-bar">
+    <a href="/" class="nav-item {% if active_tab == 'shop' %}active{% endif %}">
         <img src="/static/img/generate.svg" alt="Генерация" class="nav-icon">
         Генерация
     </a>
@@ -30,11 +33,26 @@
         <img src="/static/img/scan.svg" alt="Сканировать" class="nav-icon">
         Сканировать
     </a>
-    <a href="/upload" class="nav-item {% if active_tab == 'upload' %}active{% endif %}">
-        <img src="/static/img/upload.svg" alt="Загрузить" class="nav-icon">
-        Загрузить
-    </a>
-</nav>
+   
+</nav> -->
 {% block extra_scripts %}{% endblock %}
 </body>
+<!-- <script>
+    //Инициализация виджета. Все параметры обязательные.
+    // const checkout = new window.YooMoneyCheckoutWidget({
+    //     confirmation_token: '480065', //Токен, который перед проведением оплаты нужно получить от ЮKassa
+    //     return_url: 'https://example.com', //Ссылка на страницу завершения оплаты
+    //     error_callback: function(error) {
+    //         //Обработка ошибок инициализации
+    //     }
+    // });
+    
+    //Отображение платежной формы в контейнере
+    checkout.render('payment-form')
+    //Метод возвращает Promise, исполнение которого говорит о полной загрузке платежной формы (можно не использовать).
+      .then(() => {
+         //Код, который нужно выполнить после отображения платежной формы.
+      });
+    </script> -->
+<script src="../static/js/main.js"></script>
 </html>

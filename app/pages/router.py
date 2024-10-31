@@ -9,9 +9,9 @@ templates = Jinja2Templates(directory='app/templates')
 
 @router.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse("pages/generate.html",
+    return templates.TemplateResponse("pages/shop.html",
                                       {"request": request,
-                                       'active_tab': 'generate'})
+                                       'active_tab': 'shop'})
 
 
 @router.get("/scan", response_class=HTMLResponse)
