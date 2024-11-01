@@ -31,12 +31,12 @@ payment.addEventListener('click', async () => {
    
     
     try{
-        const response = await axios.post('https://localhost:4200',{
+        const response = await axios.post('https://chickentoken.ru/api/payment',{
             amount:total,
     })
     const checkout = new window.YooMoneyCheckoutWidget({
         confirmation_token: response.data.confirmation.confirmation_token, //Токен, который перед проведением оплаты нужно получить от ЮKassa
-        return_url: "http://localhost:8080/" , //Ссылка на страницу завершения оплаты
+        return_url: "http://chickentoken.ru/" , //Ссылка на страницу завершения оплаты
         error_callback: function(error) {
             //Обработка ошибок инициализации
         }

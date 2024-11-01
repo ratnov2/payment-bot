@@ -10,7 +10,7 @@ const paymentButton = document.getElementById('paymentButton');
 const paymentIframe = document.querySelector('.payment iframe')
     paymentButton.addEventListener('click', async () =>{
     try{
-        const response = await axios.post('https://localhost:4200',{
+        const response = await axios.post('https://chickentoken.ru/api/payment',{
             amount:200,
             
     })
