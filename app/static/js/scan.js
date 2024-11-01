@@ -10,7 +10,7 @@ const paymentButton = document.getElementById('paymentButton');
 const paymentIframe = document.querySelector('.payment iframe')
     paymentButton.addEventListener('click', async () =>{
     try{
-        const response = await axios.post('https://9735-87-228-33-186.ngrok-free.app',{
+        const response = await axios.post('https://localhost:4200',{
             amount:200,
             
     })
